@@ -24,7 +24,7 @@ class Queue:
             return (True, item)
 
 
-if __name__ == "__main__":
+def test_queue():
     q = Queue(5)
     print(q.q)
 
@@ -43,3 +43,7 @@ if __name__ == "__main__":
     print(q.dequeue())
 
     print(q.q)
+
+
+if __name__ == "__main__":
+    test_queue()
