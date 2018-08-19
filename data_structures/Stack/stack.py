@@ -6,7 +6,6 @@ class Stack:
 
     def push(self, item):
         if self.top == self.MAX-1:
-            print("Stack overflow")
             return False
 
         self.top += 1
@@ -15,24 +14,32 @@ class Stack:
 
     def pop(self):
         if self.top == -1:
-            print("Stack underflow")
             return False
 
         self.stack[self.top]
         self.top -= 1
         return True
 
+    def isEmpty(self):
+        if self.top == -1:
+            return True
+        return False
 
-if __name__ == "__main__":
+
+def test_stack():
     stack = Stack(3)
-    print(stack.push(1))
-    print(stack.push(2))
-    print(stack.push(3))
-    print(stack.push(4))
+    print(True) if stack.push(1) else print("Stack Overflow")
+    print(True) if stack.push(2) else print("Stack Overflow")
+    print(True) if stack.push(3) else print("Stack Overflow")
+    print(True) if stack.push(4) else print("Stack Overflow")
 
     print(stack.stack)
 
-    print(stack.pop())
-    print(stack.pop())
-    print(stack.pop())
-    print(stack.pop())
+    print(True) if stack.pop() else print("Stack Underflow")
+    print(True) if stack.pop() else print("Stack Underflow")
+    print(True) if stack.pop() else print("Stack Underflow")
+    print(True) if stack.pop() else print("Stack Underflow")
+
+
+if __name__ == "__main__":
+    test_stack()
